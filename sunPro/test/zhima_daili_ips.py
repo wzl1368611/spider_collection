@@ -67,12 +67,16 @@ class GetIP(object):
 
     def judge_ip(self, ip, port):
         http_url = 'http://www.baidu.com'
-        proxy_url = 'http://{0}:{1}'.format(ip, port)
+        # proxy_url = 'http://{0}:{1}'.format(ip, port)
+        proxy_url = '{0}:{1}'.format(ip, port)
+        print('-----> proxy_url是：', proxy_url)
         proxy_dict = {
             'http': proxy_url,
         }
         try:
-            response = requests.get(http_url, proxies=proxy_dict, timeout=8)
+            response = requests.get(http_url, proxies=proxy_dict, timeout=30)
+            if 200 <= response.status_code < 300:
+                print(response.text)
             # print(response.status_code)
         except Exception as e:
             print('invalid ip and port!')  # 无效的ip port提示
@@ -94,7 +98,7 @@ class GetIP(object):
         # SELECT ip,port FROM proxy_ip
         # ORDER BY id ASC LIMIT 682
         # '''
-        random_sql = '''SELECT ip,port FROM proxy_ip'''
+        random_sql = '''SELECT ip,port FROM proxy_ip order by RAND() LIMIT 100'''
         result = cursor.execute(random_sql)
         # print('待测试的ip的总数是：', len(cursor.fetchall()))
         for ip_info in cursor.fetchall():

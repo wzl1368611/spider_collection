@@ -16,7 +16,6 @@ NEWSPIDER_MODULE = 'myPearPro.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'myPearPro (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -55,7 +54,7 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'myPearPro.middlewares.MypearproDownloaderMiddleware': 543,
+    'myPearPro.middlewares.MypearproDownloaderMiddleware': 543,
 }
 
 # Enable or disable extensions

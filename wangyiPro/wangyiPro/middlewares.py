@@ -97,6 +97,8 @@ class WangyiproDownloaderMiddleware:
             bro.get(request.url)
 
             sleep(0.5)
+            # 通过selenium控制浏览器滚动条
+            bro.execute_script("window.scrollTo(0,1000)")
             page_text = bro.page_source  # 包含了动态加载的新闻数据
             new_response = HtmlResponse(url=request.url, body=page_text, encoding='utf-8', request=request)
             return new_response

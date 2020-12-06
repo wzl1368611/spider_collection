@@ -55,7 +55,7 @@ CONCURRENT_REQUESTS_PER_DOMAIN = 8
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'sunPro.middlewares.SunproDownloaderMiddleware': 543,
+    'sunPro.middlewares.SunproDownloaderMiddleware': 543,
 }
 
 # Enable or disable extensions
@@ -67,8 +67,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'sunPro.pipelines.SunproPipeline': 300,
-   'sunPro.pipelines.mysqlPipeline': 302,
+    'sunPro.pipelines.SunproPipeline': 300,
+    'sunPro.pipelines.mysqlPipeline': 302,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
